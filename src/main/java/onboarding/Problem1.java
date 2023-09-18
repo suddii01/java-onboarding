@@ -1,10 +1,25 @@
 package onboarding;
 
+import onboarding.problem1.Problem1Constant;
+import onboarding.problem1.Problem1Exception;
+import onboarding.problem1.Problem1ExceptionType;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import static onboarding.problem1.Problem1Constant.*;
+
 class Problem1 {
     public static int solution(List<Integer> pobi, List<Integer> crong) {
+        try {
+            validatePageNumbers(pobi);
+            validatePageNumbers(crong);
+        } catch (Problem1Exception e) {
+            System.err.println("Error Type: " + e.getType());
+            System.err.println("Error Message: " + e.getMessage());
+            return -1;
+        }
+
         int pobiScore = calculateMaxScoreOfPlayer(pobi);
         int crongScore = calculateMaxScoreOfPlayer(crong);
         int answer = compareScores(pobiScore, crongScore);
@@ -58,5 +73,43 @@ class Problem1 {
             pageNumber /= 10;
         }
         return digits;
+    }
+
+    public static void validatePageNumbers(List<Integer> pageNumbers) throws Problem1Exception {
+        validatePageNumber(pageNumbers);
+        validatePageSize(pageNumbers);
+        validateConsecutivePages(pageNumbers);
+        validateOddLeftAndEvenRightPages(pageNumbers);
+    }
+
+    private static void validatePageNumber(List<Integer> pageNumbers) throws Problem1Exception {
+        if (pageNumbers.get(0) < MIN_PAGE_NUMBER || pageNumbers.get(0) > MAX_PAGE_NUMBER || pageNumbers.get(1) < MIN_PAGE_NUMBER || pageNumbers.get(1) > MAX_PAGE_NUMBER) {
+            throw new Problem1Exception(Problem1ExceptionType.INVALID_PAGE_NUMBER);
+        }
+        if ((pageNumbers.get(0) == START_LEFT_PAGE_NUMBER && pageNumbers.get(1) == START_RIGHT_PAGE_NUMBER) || (pageNumbers.get(0) == END_LEFT_PAGE_NUMBER && pageNumbers.get(1) == END_RIGHT_PAGE_NUMBER)) {
+            throw new Problem1Exception(Problem1ExceptionType.START_OR_END_PAGE_NOT_ALLOWED);
+        }
+    }
+
+
+    private static void validatePageSize(List<Integer> pageNumbers) throws Problem1Exception {
+        if (pageNumbers.size() != PAGE_NUMBERS_SIZE) {
+            throw new Problem1Exception(Problem1ExceptionType.INVALID_PAGE_SIZE);
+        }
+    }
+
+    private static void validateConsecutivePages(List<Integer> pageNumbers) throws Problem1Exception {
+        if (pageNumbers.get(1) - pageNumbers.get(0) != PAGE_NUMBERS_GAP) {
+            throw new Problem1Exception(Problem1ExceptionType.NON_CONSECUTIVE_PAGES);
+        }
+    }
+
+    private static void validateOddLeftAndEvenRightPages(List<Integer> pageNumbers) throws Problem1Exception {
+        if (pageNumbers.get(0) % 2 == 0) {
+            throw new Problem1Exception(Problem1ExceptionType.INVALID_ODD_LEFT_PAGES);
+        }
+        if (pageNumbers.get(1) % 2 != 0) {
+            throw new Problem1Exception(Problem1ExceptionType.INVALID_EVEN_RIGHT_PAGES);
+        }
     }
 }
