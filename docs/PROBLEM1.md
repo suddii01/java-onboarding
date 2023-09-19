@@ -38,8 +38,8 @@
 
 ### 데이터 유효성
 
-- [x] 책의 페이지 번호가 0 이하 혹은 401 이상인 경우 ➝ INVALID_PAGE_NUMBER
-- [x] 시작 페이지(1, 2)나 마지막 페이지(399, 400)가 선택된 경우 ➝ START_OR_END_PAGE_NOT_ALLOWED
-- [x] 플레이어가 펼친 페이지 번호들이 연속되지 않은 경우 ➝ INVALID_PAGE_SIZE
-- [x] 왼쪽 페이지 번호가 홀수, 오른쪽 페이지 번호가 짝수가 아닌 경우 ➝ NON_CONSECUTIVE_PAGES
-- [x] 페이지 번호 리스트의 크기가 2가 아닌 경우(3개 이상 혹은 1개 이하) ➝ INVALID_ODD_LEFT_PAGES, INVALID_EVEN_RIGHT_PAGES
+- [x] 책의 페이지 번호가 0 이하 혹은 401 이상인 경우 ➝ `INVALID_PAGE_NUMBER`
+- [x] 시작 페이지(1, 2)나 마지막 페이지(399, 400)가 선택된 경우 ➝ `START_OR_END_PAGE_NOT_ALLOWED`
+- [x] 플레이어가 펼친 페이지 번호들이 연속되지 않은 경우 ➝ `INVALID_PAGE_SIZE`
+- [x] 왼쪽 페이지 번호가 홀수, 오른쪽 페이지 번호가 짝수가 아닌 경우 ➝ `NON_CONSECUTIVE_PAGES`
+- [x] 페이지 번호 리스트의 크기가 2가 아닌 경우(3개 이상 혹은 1개 이하) ➝ `INVALID_ODD_LEFT_PAGES`, `INVALID_EVEN_RIGHT_PAGES`

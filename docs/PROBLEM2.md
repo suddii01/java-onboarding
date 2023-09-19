@@ -34,5 +34,5 @@
 - [x] 중복 문자가 더 이상 없을 때까지 반복한다.
 
 ### 데이터 유효성 검사
-- [x] cryptogram의 길이가 0 이하 1001 이상인 경우 ➝ INVALID_STRING_LENGTH
-- [x] cryptogram가 알파벳 소문자 외의 문자를 포함하는 경우 ➝ INVALID_CHARACTER
+- [x] cryptogram의 길이가 0 이하 1001 이상인 경우 ➝ `INVALID_STRING_LENGTH`
+- [x] cryptogram가 알파벳 소문자 외의 문자를 포함하는 경우 ➝ `INVALID_CHARACTER`
