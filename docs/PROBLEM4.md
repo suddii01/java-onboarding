@@ -31,4 +31,4 @@
 
 ### 데이터 유효성
 
-- [ ] word의 길이가 1 미만 1,000 초과인 경우 ➝ `INVALID_WORD_SIZE`
+- [x] word의 길이가 1 미만 1,000 초과인 경우 ➝ `INVALID_WORD_SIZE`
