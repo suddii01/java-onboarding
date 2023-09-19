@@ -1,8 +1,25 @@
 package onboarding;
 
+import onboarding.problem3.Problem3Exception;
+import onboarding.problem3.Problem3ExceptionType;
+
+import static onboarding.problem3.Problem3Constant.*;
+
 public class Problem3 {
     public static int solution(int number) {
+        try {
+            validateNumber(number);
+        } catch (Problem3Exception e) {
+            System.err.println("Error Type: " + e.getType());
+            System.err.println("Error Message: " + e.getMessage());
+        }
         return getTotalClapCount(number);
+    }
+
+    public static void validateNumber(int number) throws Problem3Exception {
+        if (number < NUMBER_MIN_SIZE || number > NUMBER_MAX_SIZE) {
+            throw new Problem3Exception(Problem3ExceptionType.INVALID_NUMBER);
+        }
     }
 
     public static int getTotalClapCount(int number) {

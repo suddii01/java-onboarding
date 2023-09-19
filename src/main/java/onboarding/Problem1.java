@@ -1,6 +1,5 @@
 package onboarding;
 
-import onboarding.problem1.Problem1Constant;
 import onboarding.problem1.Problem1Exception;
 import onboarding.problem1.Problem1ExceptionType;
 

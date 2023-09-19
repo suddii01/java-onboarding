@@ -24,4 +24,4 @@
 
 ### 데이터 유효성
 
-- [ ] number가 1 미만이거나 10,000 초과인 경우 ➝ `INVALID_NUMBER`
+- [x] number가 1 미만이거나 10,000 초과인 경우 ➝ `INVALID_NUMBER`
