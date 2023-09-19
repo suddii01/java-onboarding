@@ -24,4 +24,4 @@
 
 ### 데이터 유효성
 
-- [ ] money의 크기가 1 미만 1,000,000 초과인 경우 ➝ `INVALID_MONEY_SIZE`
+- [x] money의 크기가 1 미만 1,000,000 초과인 경우 ➝ `INVALID_MONEY_SIZE`
