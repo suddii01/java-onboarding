@@ -9,11 +9,54 @@ import static onboarding.problem7.Problem7Constant.*;
 
 public class Problem7 {
     public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
+        try {
+            validateId(user);
+            validateFriends(friends);
+            validateVisitors(visitors);
+        } catch (Problem7Exception e) {
+            System.err.println("Error Type: " + e.getType());
+            System.err.println("Error Message: " + e.getMessage());
+        }
+
         List<String> userFriends = getFriends(user, friends);
         Map<String, Integer> scores = getFriendsOfFriends(userFriends, friends, user);
         scores = give1Point(scores, visitors, userFriends);
         return getTop5(scores);
     }
+
+    public static void validateVisitors(List<String> visitors) throws Problem7Exception {
+        if (visitors.size() < VISITORS_MIN_SIZE || visitors.size() > VISITORS_MAX_SIZE) {
+            throw new Problem7Exception(Problem7ExceptionType.INVALID_VISITORS_SIZE);
+        }
+        for (String visitor : visitors) {
+            validateId(visitor);
+        }
+    }
+
+    public static void validateFriends(List<List<String>> friends) throws Problem7Exception {
+        if (friends.size() < FRIENDS_MIN_SIZE || friends.size() > FRIENDS_MAX_SIZE) {
+            throw new Problem7Exception(Problem7ExceptionType.INVALID_FRIENDS_SIZE);
+        }
+        for (List<String> friend : friends) {
+            if (friend.size() != FRIEND_SIZE) {
+                throw new Problem7Exception(Problem7ExceptionType.INVALID_FRIEND_SIZE);
+            }
+            validateId(friend.get(0));
+            validateId(friend.get(1));
+        }
+    }
+
+    public static void validateId(String id) throws Problem7Exception {
+        if (id.length() < ID_MIN_LENGTH || id.length() > ID_MAX_LENGTH) {
+            throw new Problem7Exception(Problem7ExceptionType.INVALID_ID_LENGTH);
+        }
+        for (int i = 0; i < id.length(); i++) {
+            if (id.charAt(i) < FIRST_LOWER_ALPHABET || id.charAt(i) > LAST_LOWER_ALPHABET) {
+                throw new Problem7Exception(Problem7ExceptionType.INVALID_ID_FORMAT);
+            }
+        }
+    }
+
 
     public static List<String> getFriends(String user, List<List<String>> friends) {
         List<String> userFriends = new ArrayList<>();

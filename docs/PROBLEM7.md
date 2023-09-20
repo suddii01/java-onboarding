@@ -43,8 +43,8 @@ return 하도록 solution 메서드를 완성하라. 이때 추천 점수가 0�
 
 ### 데이터 유효성
 
-- [ ] 사용자 아이디의 길이가 1자 미만 30자 초과인 경우 ➝ `INVALID_ID_LENGTH`
-- [ ] 사용자 아이디가 알파벳 소문자 외의 문자를 가지는 경우 ➝ `INVALID_ID_FORMAT`
-- [ ] friends의 전체 크기가 1 미만 10000 초과인 경우 ➝ `INVALID_FRIENDS_SIZE`
-- [ ] friends의 각 원소의 크기 2가 아닌 경우 ➝ `INVALID_FRIEND_SIZE`
-- [ ] visitors의 전체 크기가 1 미만 10000 초과인 경우 ➝ `INVALID_VISITORS_SIZE`
+- [x] 사용자 아이디의 길이가 1자 미만 30자 초과인 경우 ➝ `INVALID_ID_LENGTH`
+- [x] 사용자 아이디가 알파벳 소문자 외의 문자를 가지는 경우 ➝ `INVALID_ID_FORMAT`
+- [x] friends의 전체 크기가 1 미만 10000 초과인 경우 ➝ `INVALID_FRIENDS_SIZE`
+- [x] friends의 각 원소의 크기 2가 아닌 경우 ➝ `INVALID_FRIEND_SIZE`
+- [x] visitors의 전체 크기가 1 미만 10000 초과인 경우 ➝ `INVALID_VISITORS_SIZE`
