@@ -34,8 +34,8 @@
 
 ### 데이터 유효성
 
-- [ ] 크루의 수가 1명 미만 10,000명 초과인 경우 ➝ `INVALID_CREW_SIZE`
-- [ ] 이메일의 전체 길이가 11자 미만 20자 초과인 경우 ➝ `INVALID_EMAIL_LENGTH`
-- [ ] 이메일의 도메인이 email.com이 아닌 경우 ➝ `INVALID_EMAIL_FORMAT`
-- [ ] 닉네임의 전체 길이가 1자 미만 20자 초과인 경우 ➝ `INVALID_NICKNAME_LENGTH`
-- [ ] 닉네임이 한글이 아닌 경우 ➝ `INVALID_NICKNAME_FORMAT`
+- [x] 크루의 수가 1명 미만 10,000명 초과인 경우 ➝ `INVALID_CREW_SIZE`
+- [x] 이메일의 전체 길이가 11자 미만 20자 초과인 경우 ➝ `INVALID_EMAIL_LENGTH`
+- [x] 이메일의 도메인이 email.com이 아닌 경우 ➝ `INVALID_EMAIL_FORMAT`
+- [x] 닉네임의 전체 길이가 1자 미만 20자 초과인 경우 ➝ `INVALID_NICKNAME_LENGTH`
+- [x] 닉네임이 한글이 아닌 경우 ➝ `INVALID_NICKNAME_FORMAT`
